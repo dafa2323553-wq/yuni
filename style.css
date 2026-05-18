@@ -1,0 +1,140 @@
+/* --- CSS Dasar & Halaman Login (Sama seperti sebelumnya dengan optimasi) --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #f4f7f6; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+.hidden { display: none !important; }
+
+.login-container { display: flex; width: 850px; height: 550px; background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; }
+.login-sidebar { flex: 1; background: linear-gradient(135deg, #1e3c72, #2a5298); color: #fff; display: flex; align-items: center; padding: 40px; }
+.badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-block; margin-bottom: 10px; }
+.login-sidebar h2 { font-size: 28px; margin-bottom: 10px; }
+.login-sidebar p { font-size: 14px; opacity: 0.8; }
+.login-form-section { flex: 1.2; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.form-box { width: 100%; max-width: 340px; }
+.logo-area { text-align: center; margin-bottom: 20px; }
+.school-logo { font-size: 40px; }
+.logo-area h3 { font-size: 22px; color: #333; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 5px; }
+.input-group input { width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+.password-wrapper { position: relative; display: flex; align-items: center; width: 100%; }
+.password-wrapper input { padding-right: 40px; }
+.toggle-password-btn { position: absolute; right: 12px; background: none; border: none; cursor: pointer; font-size: 16px; }
+.role-selection { margin-bottom: 20px; }
+.role-selection label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 8px; }
+.radio-group { display: flex; gap: 10px; }
+.radio-label { flex: 1; cursor: pointer; }
+.radio-label input { display: none; }
+.custom-radio { display: block; text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 13px; background: #fff; transition: 0.2s; }
+.radio-label input:checked + .custom-radio { background: #2a5298; color: white; border-color: #2a5298; }
+.btn-login { width: 100%; padding: 12px; background: #2a5298; color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.error-message { color: #d9534f; font-size: 13px; text-align: center; margin-top: 10px; min-height: 20px; }
+
+/* --- FITUR BARU: CSS Halaman Dashboard Mata Pelajaran --- */
+.dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: border-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-left h2 { color: #1e3c72; }
+.header-left p { color: #666; font-size: 14px; margin-top: 2px; }
+
+.btn-logout {
+    padding: 8px 16px;
+    background: #fff;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: auto;
+}
+.btn-logout:hover { background: #cc0000; color: #fff; }
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-badge {
+    background: #e1f5fe;
+    color: #0288d1;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Tata Letak Grid Kartu Mapel */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Desain Kartu Mata Pelajaran */
+.subject-card {
+    background: #f8f9fa;
+    border-left: 5px solid #2a5298;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.subject-icon { font-size: 30px; margin-bottom: 10px; display: block; }
+.subject-card h4 { color: #333; font-size: 18px; margin-bottom: 5px; }
+.subject-teacher { font-size: 13px; color: #777; margin-bottom: 15px; }
+
+/* Tombol Aksi di dalam Mapel (Berbeda tiap Role) */
+.subject-action-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-siswa { background: #e8f0fe; color: #1a73e8; }
+.btn-siswa:hover { background: #1a73e8; color: #fff; }
+
+.btn-guru { background: #e6f4ea; color: #137333; }
+.btn-guru:hover { background: #137333; color: #fff; }
+
+/* Responsif */
+@media (max-width: 768px) {
+    .login-container { flex-direction: column; width: 100%; height: auto; }
+    .login-sidebar { padding: 30px 20px; }
+}

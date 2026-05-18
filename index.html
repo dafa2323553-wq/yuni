@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Akademik Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. HALAMAN LOGIN (Tampilan Awal) -->
+    <div class="login-container" id="loginPage">
+        <div class="login-sidebar">
+            <div class="sidebar-content">
+                <span class="badge">E-LEARNING</span>
+                <h2>SMA Negeri Gemilang</h2>
+                <p>Akses ruang kelas digital, materi, dan rekapitulasi nilai dalam satu pintu.</p>
+            </div>
+        </div>
+
+        <div class="login-form-section">
+            <div class="form-box">
+                <div class="logo-area">
+                    <span class="school-logo">🎓</span> 
+                    <h3>Selamat Datang</h3>
+                    <p>Silakan masuk dengan akun Anda</p>
+                </div>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Nama Pengguna</label>
+                        <input type="text" id="username" placeholder="Contoh: Budi Utomo / Ibu Sri" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Masukkan password" required>
+                            <button type="button" id="togglePassword" class="toggle-password-btn">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="role-selection">
+                        <label>Pilih Peran Anda:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="role" value="siswa" checked>
+                                <span class="custom-radio">👨‍🎓 Siswa</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="role" value="guru">
+                                <span class="custom-radio">👩‍🏫 Guru</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-login">Masuk ke Kelas 🚀</button>
+                </form>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. HALAMAN DASHBOARD MATA PELAJARAN (Muncul Setelah Login) -->
+    <div class="dashboard-container hidden" id="dashboardPage">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h2>🏫 Portal Akademik</h2>
+                <p id="welcomeUser">Selamat Datang, User</p>
+            </div>
+            <button id="btnLogout" class="btn-logout">Keluar Sistem 🚪</button>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="section-title">
+                <h3>📚 Daftar Mata Pelajaran Anda</h3>
+                <p id="roleBadge" class="role-badge">Siswa</p>
+            </div>
+
+            <!-- Tempat kartu mata pelajaran akan di-render oleh JavaScript -->
+            <div class="subjects-grid" id="subjectsGrid"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
